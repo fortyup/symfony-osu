@@ -3,6 +3,10 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-Bienvenue !
+    Bienvenue sur ma première page !
+    <br>
+    <a href="{{ path('app_login') }}">Se connecter</a>
+    <a href="{{ path('app_register') }}">S'inscrire</a>
+    <br>
+    <a href="{{ path('app_contact') }}">Nous contacter</a>
 {% endblock %}
-
