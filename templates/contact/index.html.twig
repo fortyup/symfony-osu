@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+{% extends 'base.html.twig' %}
 
-<title>Contact</title>
+{% block title %}Contact{% endblock %}
 
 {% block body %}
-    Contactez-nous !
+Contactez-nous !
 {{ form(formulaire) }}
 {% endblock %}
