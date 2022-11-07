@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+   {% for article in articles %}
+       {{ article.title }}
+       {{ article.content }}
+       <a href="{{ article.image }}">Website</a>
+       {{ article.createdAt|date('d/m/Y') }}
+       <br>
+   {% endfor %}
+
+{% endblock %}
