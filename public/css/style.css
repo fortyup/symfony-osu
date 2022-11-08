@@ -1,27 +1,178 @@
 body {
-    background-color: rgb(23,24,28);
-    color: white;
+    left: 0px;
+    top: 0px;
+    color:white;
+    background: #302E38;
 }
 
 header {
-    background-color: rgb(86,57,172);
-    color: white;
-    text-align: center;
-    height: 100px;
+    width: 1440px;
+    height: 200px;
+    left: 0px;
+    top: 0px;
+
+    background: linear-gradient(180deg, #443678 0%, rgba(33, 31, 46, 0) 100%);
 }
 
-.mainPage {
-    background-color: rgb(36,34,41);
+/*test for link*/
+a:link {
     color: white;
-    text-align: left;
+    background-color: transparent;
+    text-decoration: none;
 }
-a {
+
+a:visited {
     color: white;
+    background-color: transparent;
+    text-decoration: none;
 }
-.article {
-    background-color: rgb(36,34,41);
+
+a:hover {
     color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+/* properties for the header */
+.menu {
     text-align: center;
-    margin-left: 10%;
-    margin-right: 10%;
+    vertical-align: auto;
+    display: inline-block;
+    margin-left: 220px;
+    margin-right: 220px;
+    margin-top: 1%;
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+    left: 220px;
+    top: 10px;
+    border-radius: 0px;
+    text-align: center;
+    margin: auto;
+}
+
+/* properties for the link */
+.menu a {
+    font-family: 'Aller';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    color: #FFFFFF;
+}
+
+.menu svg{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+svg {
+    margin: 10px;
+}
+
+.profile {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 1140px;
+    top: 10px;
+
+    border-radius: 250px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.imageHead{
+    text-align: center;
+    align-items: center;
+}
+
+
+
+.mainPage {
+    position: absolute;
+    width: 1000px;
+    height: 744px;
+    left: 220px;
+    top: 280px;
+
+    background: #242229;
+}
+
+.tableauDeBord{
+    position: absolute;
+    width: 1000px;
+    height: 100px;
+    left: 220px;
+    top: 100px;
+
+    background: #211F2E;
+}
+
+.dashboard{
+    position: absolute;
+    width: 1000px;
+    height: 80px;
+    left: 220px;
+    top: 200px;
+
+    background: #2E293D;
+}
+
+.home {
+    position: absolute;
+    width: 90px;
+    height: 100px;
+    left: 300px;
+    top: 0px;
+}
+
+.beatmap{
+    position: absolute;
+    width: 90px;
+    height: 100px;
+    left: 390px;
+    top: 0px;
+}
+
+.ranking{
+    position: absolute;
+    width: 90px;
+    height: 100px;
+    left: 480px;
+    top: 0px;
+}
+
+.forum{
+    position: absolute;
+    width: 90px;
+    height: 100px;
+    left: 570px;
+    top: 0px;
+    /*put in the middle*/
+    margin: auto;
+}
+
+.help{
+    position: absolute;
+    width: 90px;
+    height: 100px;
+    left: 660px;
+    top: 0px;
 }

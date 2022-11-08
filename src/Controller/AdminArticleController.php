@@ -10,10 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/profile/article')]
-class ProfileArticleController extends AbstractController
+#[Route('/admin/article')]
+class AdminArticleController extends AbstractController
 {
-    #[Route('/', name: 'app_profile_article_index', methods: ['GET'])]
+    #[Route('/', name: 'admin_article_index', methods: ['GET'])]
     public function index(ArticleRepository $articleRepository): Response
     {
         return $this->render('profile_article/index.html.twig', [
@@ -21,7 +21,7 @@ class ProfileArticleController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_profile_article_new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'admin_article_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ArticleRepository $articleRepository): Response
     {
         $article = new Article();
@@ -31,7 +31,7 @@ class ProfileArticleController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $articleRepository->save($article, true);
 
-            return $this->redirectToRoute('app_profile_article_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_article_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('profile_article/new.html.twig', [
@@ -40,7 +40,7 @@ class ProfileArticleController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_profile_article_show', methods: ['GET'])]
+    #[Route('/{id}', name: 'admin_article_show', methods: ['GET'])]
     public function show(Article $article): Response
     {
         return $this->render('profile_article/show.html.twig', [
@@ -48,7 +48,7 @@ class ProfileArticleController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_profile_article_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/edit', name: 'admin_article_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Article $article, ArticleRepository $articleRepository): Response
     {
         $form = $this->createForm(ArticleType::class, $article);
@@ -57,7 +57,7 @@ class ProfileArticleController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $articleRepository->save($article, true);
 
-            return $this->redirectToRoute('app_profile_article_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_article_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('profile_article/edit.html.twig', [
@@ -66,13 +66,13 @@ class ProfileArticleController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_profile_article_delete', methods: ['POST'])]
+    #[Route('/{id}', name: 'admin_article_delete', methods: ['POST'])]
     public function delete(Request $request, Article $article, ArticleRepository $articleRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$article->getId(), $request->request->get('_token'))) {
             $articleRepository->remove($article, true);
         }
 
-        return $this->redirectToRoute('app_profile_article_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin_article_index', [], Response::HTTP_SEE_OTHER);
     }
 }
