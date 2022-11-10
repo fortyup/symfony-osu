@@ -1,20 +1,103 @@
+/* CSS reset
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
 body {
-    left: 0px;
-    top: 0px;
-    color:white;
+    line-height: 1
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Now css for pages */
+
+body {
+    color: white;
     background: #302E38;
+
+    font-family: Aller, sans-serif;
+'; font-style: normal;
+font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 header {
-    width: 1440px;
-    height: 200px;
+    width: 100%;
+    height: auto;
     left: 0px;
     top: 0px;
 
     background: linear-gradient(180deg, #443678 0%, rgba(33, 31, 46, 0) 100%);
 }
 
-/*test for link*/
+.menu {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.link-menu {
+    margin: 10px;
+}
+
+.img-menu {
+    margin: 10px;
+}
+
+.profile {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    /*mettre a droite quand c'est un flex*/
+    margin-left: auto;
+}
+
+
+/*css about links*/
 a:link {
     color: white;
     background-color: transparent;
@@ -39,30 +122,20 @@ a:active {
     text-decoration: underline;
 }
 
-/* properties for the header */
-.menu {
-    text-align: center;
-    vertical-align: auto;
-    display: inline-block;
-    margin-left: 220px;
-    margin-right: 220px;
-    margin-top: 1%;
-}
+/*css for the main content*/
 
-.logo {
-    height: 60px;
-    width: 60px;
-    left: 220px;
-    top: 10px;
-    border-radius: 0px;
-    text-align: center;
+main{
+    max-width: 70%;
     margin: auto;
+    background: #242229;
 }
 
-/* properties for the link */
+/*
+
+!* properties for the link *!
 .menu a {
-    font-family: 'Aller';
-    font-style: normal;
+    font-family: Aller, sans-serif;
+'; font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
@@ -75,47 +148,8 @@ a:active {
     color: #FFFFFF;
 }
 
-.menu svg{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-}
 
-svg {
-    margin: 10px;
-}
-
-.profile {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    left: 1140px;
-    top: 10px;
-
-    border-radius: 250px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.imageHead{
-    text-align: center;
-    align-items: center;
-}
-
-
-
-.mainPage {
-    position: absolute;
-    width: 1000px;
-    height: 744px;
-    left: 220px;
-    top: 280px;
-
-    background: #242229;
-}
-
-.tableauDeBord{
+.tableauDeBord {
     position: absolute;
     width: 1000px;
     height: 100px;
@@ -125,7 +159,7 @@ svg {
     background: #211F2E;
 }
 
-.dashboard{
+.dashboard {
     position: absolute;
     width: 1000px;
     height: 80px;
@@ -143,7 +177,7 @@ svg {
     top: 0px;
 }
 
-.beatmap{
+.beatmap {
     position: absolute;
     width: 90px;
     height: 100px;
@@ -151,7 +185,7 @@ svg {
     top: 0px;
 }
 
-.ranking{
+.ranking {
     position: absolute;
     width: 90px;
     height: 100px;
@@ -159,20 +193,36 @@ svg {
     top: 0px;
 }
 
-.forum{
+.forum {
     position: absolute;
     width: 90px;
     height: 100px;
     left: 570px;
     top: 0px;
-    /*put in the middle*/
+    !*put in the middle*!
     margin: auto;
 }
 
-.help{
+.help {
     position: absolute;
     width: 90px;
     height: 100px;
     left: 660px;
     top: 0px;
 }
+
+.playOfTheWeek {
+    display: flex;
+    align-items: end;
+    width: 350px;
+    height: 651px;
+    left: 849px;
+    top: 280px;
+
+    background: #302E38;
+}
+
+.playOfTheWeek iframe {
+    display: inline-block;
+    vertical-align: middle;
+}*/

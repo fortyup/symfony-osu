@@ -32,4 +32,23 @@ class ArticleController extends AbstractController
         //return $this->render('article/show.html.twig', ['article' => $article]);
     }
 
+    #[Route('/article/new', name: 'app_article_new')]
+    public function new(ManagerRegistry $managerRegistry, ValidatorInterface $validator): Response
+    {
+        $article = new Article();
+        $article->setTitle('My first article');
+        $article->setContent('This is the content of my first article');
+        $article->setCreatedAt(new DateTimeImmutable());
+
+        $errors = $validator->validate($article);
+
+        if (count($errors) > 0) {
+            return new Response((string) $errors, 400);
+        }
+
+        $managerRegistry->getManager()->persist($article);
+        $managerRegistry->getManager()->flush();
+
+        return new Response('Saved new article with id '.$article->getId());
+    }
 }

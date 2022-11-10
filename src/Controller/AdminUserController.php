@@ -12,10 +12,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/admin/users')]
 class AdminUserController extends AbstractController
 {
-    #[Route('/', name: 'admin_users_index', methods: ['GET'])]
+    #[Route('/admin/users/', name: 'admin_users_index', methods: ['GET'])]
     public function index(UserRepository $userRepository): Response
     {
         return $this->render('profile/index.html.twig', [
@@ -23,7 +22,7 @@ class AdminUserController extends AbstractController
         ]);
     }
 
-    #[Route('/show-me', name: 'admin_show', methods: ['GET'])]
+    #[Route('/admin/users/show-me', name: 'admin_show', methods: ['GET'])]
     public function show(): Response
     {
         $user = $this->getUser();
@@ -32,7 +31,7 @@ class AdminUserController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'admin_users_new', methods: ['GET', 'POST'])]
+    #[Route('/admin/users/new', name: 'admin_users_new', methods: ['GET', 'POST'])]
     public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $passwordEncoder): Response
     {
         $user = new User();
@@ -58,7 +57,7 @@ class AdminUserController extends AbstractController
     }
 
 
-    #[Route('/edit', name: 'admin_edit', methods: ['GET', 'POST'])]
+    #[Route('/admin/users/edit', name: 'admin_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, UserRepository $userRepository): Response
     {
         $user = $this->getUser();

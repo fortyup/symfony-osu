@@ -1,43 +1,64 @@
-{%  extends 'base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Home{% endblock %}
 
 {% block body %}
-    <html>
     <head>
         <title>Page d'accueil</title>
     </head>
     <body>
-    <header>
-        <div class="menu">
-            <img src="{{ asset("/image/osu-logo-white.svg") }}" alt="osu logo in white" width="60px" height="60px"/>
-            <a href="{{ path('home') }} " class="home">Accueil</a>
-            <a href="#" class="beatmap">Beatmaps</a>
-            <a href="#" class="ranking">Classements</a>
-            <a href="{{ path("app_article") }}" class="forum">Forums</a>
-            <a href="https://osu.ppy.sh/wiki/fr/Main_Page" class="help">Aide</a>
-            <div class="imageHead">
-                <img src="image/artist-noavatar@2x.jpg" alt="artist" class="profile">
+        <header>
+            <div class="menu">
+                <img src="{{ asset("/image/osu-logo-white.svg") }}" alt="osu logo in white" width="60px" height="60px" class="img-menu"/>
+                <nav>
+                    <a href="{{ path('home') }} " class="link-menu">Accueil</a>
+                    <a href="#" class="link-menu">Beatmaps</a>
+                    <a href="#" class="link-menu">Classements</a>
+                    <a href="{{ path("app_article") }}" class="link-menu">Forums</a>
+                    <a href="https://osu.ppy.sh/wiki/fr/Main_Page" class="link-menu">Aide</a>
+                </nav>
+                <img src="image/artist-noavatar@2x.jpg" alt="basic profile picture" class="profile img-menu">
             </div>
-        </div>
-    </header>
-    <div class="tableauDeBord">
-        <a href="{{ path('app_contact') }}">Nous contacter</a>
-    </div>
-    <div class="dashboard">
-        <p>Welcome to the dashboard!</p>
-    </div>
-    <div class="mainPage">
-        <h1>Page d'accueil</h1>
-        <p>Bienvenue sur la page d'accueil de mon site !</p>
-        <div class="identification">
-            <a href="{{ path('app_login') }}">Se connecter</a>
-            <a href="{{ path('app_register') }}">S'inscrire</a>
-        </div>
-
-    </div>
-    <br>
+        </header>
+        <main>
+            <div class="tableauDeBord">
+                <a href="{{ path('app_contact') }}">Nous contacter</a>
+            </div>
+            <div class="dashboard">
+                {% if app is defined and app.user is defined and app.user.email is defined and app.user.email is not empty %}
+                    <p>Welcome {{ app.user.email }}!</p>
+                {% else %}
+                    <p>Welcome to my website!</p>
+                {% endif %}
+            </div>
+            <div class="mainPage">
+                <h1>Page d'accueil</h1>
+                <p>Bienvenue sur la page d'accueil de mon site !</p>
+                <div class="identification">
+                    <a href="{{ path('app_login') }}">Se connecter</a>
+                    <a href="{{ path('app_register') }}">S'inscrire</a>
+                </div>
+                {#<div class="playOfTheWeek">
+                <iframe width="330" height="auto" src="https://www.youtube.com/embed/SSJOtgLmOIo"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                <iframe width="330" height="auto" src="https://www.youtube.com/embed/ViZBHeMNQ6Y"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                <iframe width="330" height="auto" src="https://www.youtube.com/embed/iyd5ufMWQ2s"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                <iframe width="330" height="auto" src="https://www.youtube.com/embed/zUNXPjuBuBU"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>#}
+            </div>
+            <br>
+            </div>
+        </main>
     </body>
-    </html>
-
 {% endblock %}
