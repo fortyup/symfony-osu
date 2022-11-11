@@ -1,5 +1,4 @@
-/* CSS reset
-*/
+/* CSS Reset */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -21,42 +20,48 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
-
+/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
-
 body {
-    line-height: 1
+    line-height: 1;
 }
-
 ol, ul {
     list-style: none;
 }
-
 blockquote, q {
     quotes: none;
 }
-
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
     content: none;
 }
-
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
+/* Remettre les propriétés des balises par défaut */
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
 /* Now css for pages */
 
 body {
     color: white;
     background: #302E38;
 
-    font-family: Aller, sans-serif;
+font-family: Aller, sans-serif;
 '; font-style: normal;
 font-weight: 400;
     font-size: 14px;
@@ -123,106 +128,91 @@ a:active {
 }
 
 /*css for the main content*/
-
-main{
-    max-width: 70%;
-    margin: auto;
-    background: #242229;
-}
-
-/*
-
-!* properties for the link *!
-.menu a {
-    font-family: Aller, sans-serif;
-'; font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    margin: 10px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-
-    color: #FFFFFF;
-}
-
-
 .tableauDeBord {
-    position: absolute;
-    width: 1000px;
+    width: 100%;
     height: 100px;
-    left: 220px;
-    top: 100px;
-
     background: #211F2E;
 }
 
 .dashboard {
-    position: absolute;
-    width: 1000px;
+    width: 100%;
     height: 80px;
-    left: 220px;
-    top: 200px;
 
     background: #2E293D;
+
 }
 
-.home {
-    position: absolute;
-    width: 90px;
-    height: 100px;
-    left: 300px;
-    top: 0px;
+.mainPage {
+    padding-bottom: 10px;
 }
 
-.beatmap {
-    position: absolute;
-    width: 90px;
-    height: 100px;
-    left: 390px;
-    top: 0px;
-}
-
-.ranking {
-    position: absolute;
-    width: 90px;
-    height: 100px;
-    left: 480px;
-    top: 0px;
-}
-
-.forum {
-    position: absolute;
-    width: 90px;
-    height: 100px;
-    left: 570px;
-    top: 0px;
-    !*put in the middle*!
-    margin: auto;
-}
-
-.help {
-    position: absolute;
-    width: 90px;
-    height: 100px;
-    left: 660px;
-    top: 0px;
+.h1-playOfTheWeek {
+    color: #C2B7E0;
 }
 
 .playOfTheWeek {
-    display: flex;
-    align-items: end;
     width: 350px;
-    height: 651px;
-    left: 849px;
-    top: 280px;
-
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: #302E38;
+    padding: 10px;
+    margin-right: 20px;
+    margin-left: auto;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
 }
 
-.playOfTheWeek iframe {
-    display: inline-block;
-    vertical-align: middle;
-}*/
+iframe {
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+}
+
+
+main{
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+
+    background: #242229;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    background: #242229;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.footer-menu {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* CSS exclusive to the article page */
+.h1-article {
+    margin-left: 50px;
+    padding: 20px 0px 10px 0px;
+    color: #C2B7E0;
+
+}
+
+.article {
+    width: 530px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #302E38;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 5px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+}
