@@ -19,7 +19,9 @@
             {% endif %}
             <h1>{{ article.title }}</h1>
             <p>{{ article.content }}</p>
-            <p>Article créé le : {{ article.createdAt|date('d/m/Y') }}</p>
+            <div class="h1-playOfTheWeek">
+                <p>{{ article.createdAt|date('d/m/Y') }}</p>
+            </div>
             {# Code find on publish.tweeter.com #}
             <div class="share-media">
                 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"

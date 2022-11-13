@@ -9,6 +9,24 @@
     <body>
     <div class="user-home">
         <h1 class="h1-article">Last articles</h1>
+        <div class="articles">
+            {% for article in articles %}
+                <div class="article">
+                    {% if article.image is defined and article.image is not empty %}
+                        <td>
+                            <img src="{{ asset('/uploads/' ~ article.image) }}" width="530px" height="100%"
+                                 alt="image de l'article"/>
+                        </td>
+                    {% endif %}
+                    <h2>{{ article.title }}</h2>
+                    <p>{{ article.content }}</p>
+                    </h2>
+                </div>
+            {% endfor %}
+            <div class="see-more">
+                <a href="{{ path("app_article") }}">See more</a>
+            </div>
+        </div>
     </div>
     <div class="playOfTheWeek">
         <h1 class="h1-playOfTheWeek">Play of the week</h1>
