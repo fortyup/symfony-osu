@@ -26,13 +26,16 @@
             <a href="#" class="link-menu">Beatmaps</a>
             <a href="#" class="link-menu">Rankings</a>
             <a href="{{ path("app_article") }}" class="link-menu">Community</a>
-            <a href="{{ path('app_contact') }}" class="link-menu">Help</a>
+            <a href="{{ path('app_contact_new') }}" class="link-menu">Help</a>
         </nav>
-        <div class="profile">
+        <div class="right-menu">
+        <div class="nav">
             {% if is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('admin_article_index') }}" class="link-menu">Admin articles</a>
                     <a href="{{ path('admin_users_index') }}" class="link-menu">Admin users</a>
+                    <a href="{{ path('app_contact') }}" class="link-menu">Admin contact</a>
             {% endif %}
+        </div>
             <img src="/image/artist-noavatar@2x.jpg" alt="basic profile picture" class="img-menu">
         </div>
     </div>
@@ -61,7 +64,7 @@
         <a href="#" class="link-menu">Terms</a>
         <a href="#" class="link-menu">Privacy</a>
         <a href="https://github.com/fortyup/symfonyProjet" class="link-menu">Source Code</a>
-        <a href="{{ path('app_contact') }}">Contact Us</a>
+        <a href="{{ path('app_contact_new') }}">Contact Us</a>
     </div>
 </footer>
 </body>

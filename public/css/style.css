@@ -96,6 +96,12 @@ header {
     height: 60px;
 }
 
+.right-menu {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
 .profile {
     /*mettre a droite quand c'est un flex*/
     margin-left: auto;
@@ -238,7 +244,16 @@ footer {
     margin-right: 10px;
 }
 
-.test-flex {
-    display: flex;
+.form-group {
+    margin-left: 5px;
+}
 
+/* align th with td */
+th {
+    text-align: center;
+}
+
+/* align td with th */
+td {
+    text-align: center;
 }
