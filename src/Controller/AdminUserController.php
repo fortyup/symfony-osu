@@ -12,26 +12,27 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/admin/users')]
 class AdminUserController extends AbstractController
 {
-    #[Route('/admin/users/', name: 'admin_users_index', methods: ['GET'])]
+    #[Route('/', name: 'admin_users_index', methods: ['GET'])]
     public function index(UserRepository $userRepository): Response
     {
-        return $this->render('profile/index.html.twig', [
+        return $this->render('user/index.html.twig', [
             'users' => $userRepository->findAll(),
         ]);
     }
 
-    #[Route('/admin/users/show-me', name: 'admin_show', methods: ['GET'])]
+    #[Route('/show-me', name: 'admin_show', methods: ['GET'])]
     public function show(): Response
     {
         $user = $this->getUser();
-        return $this->render('profile/show.html.twig', [
+        return $this->render('user/show.html.twig', [
             'user' => $user,
         ]);
     }
 
-    #[Route('/admin/users/new', name: 'admin_users_new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'admin_users_new', methods: ['GET', 'POST'])]
     public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $passwordEncoder): Response
     {
         $user = new User();
@@ -50,14 +51,14 @@ class AdminUserController extends AbstractController
             return $this->redirectToRoute('admin_users_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('profile/new.html.twig', [
+        return $this->renderForm('user/new.html.twig', [
             'user' => $user,
             'form' => $form,
         ]);
     }
 
 
-    #[Route('/admin/users/edit', name: 'admin_edit', methods: ['GET', 'POST'])]
+    #[Route('/edit', name: 'admin_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, UserRepository $userRepository): Response
     {
         $user = $this->getUser();
@@ -71,7 +72,7 @@ class AdminUserController extends AbstractController
             return $this->redirectToRoute('admin_show', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('profile/edit.html.twig', [
+        return $this->renderForm('user/edit.html.twig', [
             'user' => $user,
             'form' => $form,
         ]);

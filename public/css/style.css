@@ -91,12 +91,12 @@ header {
 
 .img-menu {
     margin: 10px;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
 }
 
 .profile {
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
     /*mettre a droite quand c'est un flex*/
     margin-left: auto;
 }
@@ -144,6 +144,8 @@ a:active {
 
 .mainPage {
     padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
 }
 
 .h1-playOfTheWeek {
@@ -160,10 +162,11 @@ a:active {
     padding: 10px;
     margin-right: 20px;
     margin-left: auto;
+    margin-bottom: auto;
     box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
 }
 
-iframe {
+.potw-iframe {
     margin-bottom: 20px;
     box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
 }
@@ -198,11 +201,20 @@ footer {
 
 /* CSS exclusive to the article page */
 .h1-article {
-    margin-left: 50px;
     padding: 20px 0px 10px 0px;
     color: #C2B7E0;
 
 }
+ .user-home {
+     width: 530px;
+     height: auto;
+     display: flex;
+        flex-direction: column;
+        align-items: start;
+     margin-left: 50px;
+        margin-bottom: 20px;
+
+ }
 
 .article {
     width: 530px;
@@ -211,8 +223,22 @@ footer {
     flex-direction: column;
     align-items: center;
     background: #302E38;
-    margin-right: 50px;
-    margin-left: 50px;
     margin-bottom: 5px;
+    padding-bottom: 10px;
     box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+}
+
+.share-media {
+    display: flex;
+    flex-direction: row;
+}
+
+.media-l {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.test-flex {
+    display: flex;
+
 }

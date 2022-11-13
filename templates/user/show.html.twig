@@ -3,10 +3,11 @@
 {% block title %}User{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
+    <main>
+        <h1>User</h1>
 
-    <table class="table">
-        <tbody>
+        <table class="table">
+            <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ user.id }}</td>
@@ -18,10 +19,10 @@
             <tr>
                 <th>Password</th>
                 <td>* * * * * * * *</td>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
-    <a href="{{ path('admin_users_index') }}">back to list</a>
-    <a href="{{ path('admin_edit') }}">edit</a>
-
+        <a href="{{ path('admin_users_index') }}">back to list</a>
+        <a href="{{ path('admin_edit') }}">edit</a>
+    </main>
 {% endblock %}

@@ -3,45 +3,47 @@
 {% block title %}Article index{% endblock %}
 
 {% block body %}
-    <h1>Article index</h1>
+    <main>
+        <h1>Article index</h1>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Content</th>
-            <th>Image</th>
-            <th>CreatedAt</th>
-            <th>actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% if articles is defined %}
-            {% for article in articles %}
-                <tr>
-                    <td>{{ article.id }}</td>
-                    <td>{{ article.title }}</td>
-                    <td>{{ article.content }}</td>
-                    {% if article.image is defined and article.image is not empty %}
-                    <td>
-                        <img src="{{ asset('/uploads/' ~ article.image) }}" width="100%" height="auto" alt="image de l'article"/>
-                    </td>
-                    {% endif %}
-                    <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                    <td>
-                        <a href="{{ path('admin_article_show', {'id': article.id}) }}">show</a>
-                        <a href="{{ path('admin_article_edit', {'id': article.id}) }}">edit</a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="6">no records found</td>
-                </tr>
-            {% endfor %}
-        {% endif %}
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Image</th>
+                <th>CreatedAt</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if articles is defined %}
+                {% for article in articles %}
+                    <tr>
+                        <td>{{ article.id }}</td>
+                        <td>{{ article.title }}</td>
+                        <td>{{ article.content }}</td>
+                        {% if article.image is defined and article.image is not empty %}
+                            <td>
+                                <img src={{ asset('upload/' ~ article.image) }} width="100%" height="auto"/>
+                            </td>
+                        {% endif %}
+                        <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>
+                            <a href="{{ path('admin_article_show', {'id': article.id}) }}">show</a>
+                            <a href="{{ path('admin_article_edit', {'id': article.id}) }}">edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6">no records found</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('admin_article_new') }}">Create new</a>
+        <a href="{{ path('admin_article_new') }}">Create new</a>
+    </main>
 {% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Error{% endblock %}
+
+{% block body %}
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Oops! An Error Occurred</h1>
+                <h2>The server returned a "{{ status_code }} {{ status_text }}".</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Something is broken. Please let us know what you were doing when this error occurred. We will fix it as soon as possible. Sorry for any inconvenience caused.</h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

@@ -22,13 +22,19 @@
         <img src="{{ asset("/image/osu-logo-white.svg") }}" alt="osu logo in white" width="60px" height="60px"
              class="img-menu"/>
         <nav>
-            <a href="{{ path('home') }} " class="link-menu">Accueil</a>
+            <a href="{{ path('home') }} " class="link-menu">Home</a>
             <a href="#" class="link-menu">Beatmaps</a>
-            <a href="#" class="link-menu">Classements</a>
-            <a href="{{ path("app_article") }}" class="link-menu">Forums</a>
-            <a href="#" class="link-menu">Aide</a>
+            <a href="#" class="link-menu">Rankings</a>
+            <a href="{{ path("app_article") }}" class="link-menu">Community</a>
+            <a href="{{ path('app_contact') }}" class="link-menu">Help</a>
         </nav>
-        <img src="image/artist-noavatar@2x.jpg" alt="basic profile picture" class="profile img-menu">
+        <div class="profile">
+            {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('admin_article_index') }}" class="link-menu">Admin articles</a>
+                    <a href="{{ path('admin_users_index') }}" class="link-menu">Admin users</a>
+            {% endif %}
+            <img src="/image/artist-noavatar@2x.jpg" alt="basic profile picture" class="img-menu">
+        </div>
     </div>
 </header>
 <main>
@@ -40,10 +46,10 @@
         {% endif %}
     </div>
     <div class="dashboard">
-        <a href="{{ path('app_contact') }}">Nous contacter</a>
         <div class="identification">
-            <a href="{{ path('app_login') }}">Se connecter</a>
-            <a href="{{ path('app_register') }}">S'inscrire</a>
+            <a href="{{ path('app_login') }}">Log in</a>
+            <a href="{{ path('app_register') }}">Register</a>
+            <a href="{{ path('app_logout') }}">Log out</a>
         </div>
     </div>
     <div class="mainPage">
@@ -55,6 +61,7 @@
         <a href="#" class="link-menu">Terms</a>
         <a href="#" class="link-menu">Privacy</a>
         <a href="https://github.com/fortyup/symfonyProjet" class="link-menu">Source Code</a>
+        <a href="{{ path('app_contact') }}">Contact Us</a>
     </div>
 </footer>
 </body>
