@@ -248,12 +248,15 @@ footer {
     margin-left: 5px;
 }
 
-/* align th with td */
 th {
     text-align: center;
 }
 
-/* align td with th */
 td {
     text-align: center;
+}
+
+/* CSS exclusive to the error page */
+.container h1 {
+    color: red;
 }
