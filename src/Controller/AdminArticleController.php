@@ -43,7 +43,7 @@ class AdminArticleController extends AbstractController
 
             $articleRepository->save($article, true);
 
-            return $this->redirectToRoute('admin_article_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_article', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('profile_article/new.html.twig', [

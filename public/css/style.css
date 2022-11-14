@@ -166,9 +166,8 @@ a:active {
     align-items: center;
     background: #302E38;
     padding: 10px;
-    margin-right: 20px;
     margin-left: auto;
-    margin-bottom: auto;
+    margin-bottom: 10px;
     box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
 }
 
@@ -258,6 +257,27 @@ footer {
     background: #302E38;
     box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
 }
+
+.right-main-menu {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.new-article {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #302E38;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+}
+
 /* CSS exclusive to the admin page */
 th {
     text-align: center;

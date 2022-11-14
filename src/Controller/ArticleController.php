@@ -16,15 +16,13 @@ class ArticleController extends AbstractController
     #[Route('/article', name: 'app_article')]
     public function show(ArticleRepository $articleRepository): Response
     {
-        $articles = $articleRepository->findAll();
-
-        if (!$articles) {
-            throw $this->createNotFoundException('No article found for id ');
-        }
-
         return $this->render('article/index.html.twig', [
             'controller_name' => 'ArticleController',
-            'articles'=> $articles
+            //'articles'=> $articles
+            'articles' => $articleRepository->createQueryBuilder('a')
+                ->OrderBy('a.id', 'DESC')
+                ->getQuery()
+                ->getResult()
         ]);
 
         //or render a template
