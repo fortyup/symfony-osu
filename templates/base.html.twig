@@ -52,7 +52,10 @@
         <div class="identification">
             <a href="{{ path('app_login') }}">Log in</a>
             <a href="{{ path('app_register') }}">Register</a>
-            <a href="{{ path('app_logout') }}">Log out</a>
+            <!-- if user is connected -->
+            {% if app is defined and app.user is defined and app.user.email is defined and app.user.email is not empty %}
+                <a href="{{ path('app_logout') }}">Log out</a>
+            {% endif %}
         </div>
     </div>
     <div class="mainPage">
