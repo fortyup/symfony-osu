@@ -23,15 +23,6 @@ class AdminUserController extends AbstractController
         ]);
     }
 
-    #[Route('/show-me', name: 'admin_show', methods: ['GET'])]
-    public function show(): Response
-    {
-        $user = $this->getUser();
-        return $this->render('user/show.html.twig', [
-            'user' => $user,
-        ]);
-    }
-
     #[Route('/new', name: 'admin_users_new', methods: ['GET', 'POST'])]
     public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $passwordEncoder): Response
     {
@@ -57,6 +48,13 @@ class AdminUserController extends AbstractController
         ]);
     }
 
+    #[Route('/{id}', name: 'admin_show', methods: ['GET'])]
+    public function show(): Response
+    {
+        return $this->render('user/show.html.twig', [
+            'user' => $this->getUser(),
+        ]);
+    }
 
     #[Route('/edit', name: 'admin_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, UserRepository $userRepository): Response
