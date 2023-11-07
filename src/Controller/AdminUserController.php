@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
+use App\Entity\Users;
 use App\Form\UserFullType;
 use App\Form\UserType;
 use App\Repository\UserRepository;
@@ -35,7 +35,7 @@ class AdminUserController extends AbstractController
     #[Route('/new', name: 'admin_users_new', methods: ['GET', 'POST'])]
     public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $passwordEncoder): Response
     {
-        $user = new User();
+        $user = new Users();
         $form = $this->createForm(UserFullType::class, $user);
         $form->handleRequest($request);
 

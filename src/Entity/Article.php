@@ -29,7 +29,7 @@ class Article
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?User $auteur = null;
+    private ?Users $auteur = null;
 
     public function getId(): ?int
     {
@@ -84,12 +84,12 @@ class Article
         return $this;
     }
 
-    public function getAuteur(): ?User
+    public function getAuteur(): ?Users
     {
         return $this->auteur;
     }
 
-    public function setAuteur(?User $auteur): self
+    public function setAuteur(?Users $auteur): self
     {
         $this->auteur = $auteur;
 
