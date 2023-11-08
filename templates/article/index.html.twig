@@ -56,7 +56,10 @@
                 allowfullscreen class="potw-iframe"></iframe>
     </div>
     <div class="new-article">
-        <a href="{{ path('admin_article_new') }}">Create new article</a>
+        {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('admin') }}">Create new article</a>
+        {% endif %}
+
     </div>
     </div>
     </body>
