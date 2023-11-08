@@ -21,15 +21,11 @@ class Article
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
 
     #[ORM\Column]
     private ?DateTimeImmutable $createdAt = null;
-
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Users $auteur = null;
 
     public function getId(): ?int
     {
@@ -80,18 +76,6 @@ class Article
     public function setCreatedAt(DateTimeImmutable $createdAt): self
     {
         $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    public function getAuteur(): ?Users
-    {
-        return $this->auteur;
-    }
-
-    public function setAuteur(?Users $auteur): self
-    {
-        $this->auteur = $auteur;
 
         return $this;
     }
