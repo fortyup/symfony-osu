@@ -49,9 +49,9 @@
 <main>
     <div class="tableauDeBord">
         {% if app is defined and app.user is defined and app.user.email is defined and app.user.email is not empty %}
-            <p>Welcome {{ app.user.email }}!</p>
+            <h1 style="margin: 0; padding: 3%">{{ app.user.email }} is now connected!</h1>
         {% else %}
-            <p>Welcome to my website!</p>
+        <h1 style="margin: 0; padding: 3%">Welcome to my website!</h1>
         {% endif %}
     </div>
     <div class="dashboard">
