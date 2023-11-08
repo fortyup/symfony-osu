@@ -19,10 +19,12 @@
 <body>
 <header>
     <div class="menu">
-        <img src="{{ asset("/image/osu-logo-white.svg") }}" alt="osu logo in white" width="60px" height="60px"
-             class="img-menu"/>
+        <a href="{{ path('home') }}">
+            <img src="{{ asset("/image/osu-logo-white.svg") }}" alt="osu logo in white" width="60px" height="60px"
+                 class="img-menu"/>
+        </a>
         <nav class="link-menu">
-            <a href="{{ path('home') }} " class="link-menu">Home</a>
+            <a href="{{ path('home') }}" class="link-menu">Home</a>
             <a href="#" class="link-menu">Beatmaps</a>
             <a href="#" class="link-menu">Rankings</a>
             <a href="{{ path("app_article") }}" class="link-menu">Community</a>
@@ -30,10 +32,14 @@
         </nav>
         <div class="right-menu">
         <div class="nav link-menu">
-            {% if is_granted('ROLE_ADMIN') %}
-                    <a href="{{ path('admin_article_index') }}" class="link-menu">Admin articles</a>
-                    <a href="{{ path('admin_users_index') }}" class="link-menu">Admin users</a>
-                    <a href="{{ path('app_contact') }}" class="link-menu">Admin contact</a>
+            {% if app.user %}
+                <a href="{{ path('app_logout') }}">Logout</a>
+                <!-- If user is admin, display admin button -->
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('admin') }}">Admin</a>
+                {% endif %} {% else %}
+                <a href="{{ path('app_login') }}">Login</a>
+                <a href="{{ path('app_register') }}">Register</a>
             {% endif %}
         </div>
             <img src="/image/artist-noavatar@2x.jpg" alt="basic profile picture" class="img-menu">
@@ -50,12 +56,7 @@
     </div>
     <div class="dashboard">
         <div class="identification">
-            <a href="{{ path('app_login') }}">Log in</a>
-            <a href="{{ path('app_register') }}">Register</a>
-            <!-- if user is connected -->
-            {% if app is defined and app.user is defined and app.user.email is defined and app.user.email is not empty %}
-                <a href="{{ path('app_logout') }}">Log out</a>
-            {% endif %}
+            <h1 style="margin: 0; padding: 3%">Dashboard</h1>
         </div>
     </div>
     <div class="mainPage">
