@@ -36,15 +36,15 @@
             <a href="{{ path('app_contact_new') }}" class="link-menu">Help</a>
         </nav>
         <div class="right-menu">
-        <div class="nav link-menu">
+        <div class="link-menu">
             {% if app.user %}
                 <a href="{{ path('app_logout') }}">Logout</a>
                 <!-- If user is admin, display admin button -->
                 {% if is_granted('ROLE_ADMIN') %}
-                    <a href="{{ path('admin') }}">Admin</a>
+                    <a href="{{ path('admin') }}" class="link-menu">Admin</a>
                 {% endif %} {% else %}
-                <a href="{{ path('app_login') }}">Login</a>
-                <a href="{{ path('app_register') }}">Register</a>
+                <a href="{{ path('app_login') }}" class="link-menu">Login</a>
+                <a href="{{ path('app_register') }}" class="link-menu">Register</a>
             {% endif %}
         </div>
             <img src="/image/artist-noavatar@2x.jpg" alt="basic profile picture" class="img-menu">
