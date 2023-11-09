@@ -57,7 +57,7 @@ h1 {
 }
 /* Now css for pages */
 
-body {
+.bg-custom {
     color: white;
     background: #302E38;
 
