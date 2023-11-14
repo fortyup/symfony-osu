@@ -1,0 +1,38 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block body_id 'dashboard' %}
+
+{% block content_header_wrapper %}
+    <h1>{{ 'dashboard.heading'|trans }}</h1>
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Users</h5>
+                    <p class="card-text">{{ usersCount }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Articles</h5>
+                    <p class="card-text">{{ articlesCount }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Contacts</h5>
+                    <p class="card-text">{{ contactsCount }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
