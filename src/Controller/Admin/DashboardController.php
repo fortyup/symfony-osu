@@ -42,6 +42,7 @@ class DashboardController extends AbstractDashboardController
         return [
             MenuItem::linkToUrl('Back to website', 'fa-solid fa-clock-rotate-left', '/'),
             MenuItem::section('Dashboard'),
+            MenuItem::linkToDashboard('Dashboard', 'fa-solid fa-home'),
             MenuItem::linkToCrud('Users', 'fa-solid fa-user', Users::class),
             MenuItem::linkToCrud('Articles', 'fa-solid fa-newspaper', Article::class),
             MenuItem::linkToCrud('Contacts', 'fa-solid fa-envelope', Contact::class),
